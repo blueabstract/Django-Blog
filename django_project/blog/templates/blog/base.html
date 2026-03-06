@@ -57,6 +57,12 @@
             <!-- Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
+              <form action="{% url 'post-create' %}" method="post" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" class="nav-item nav-link btn btn-link">
+                  New Post
+                </button>
+              </form>
               <form action="{% url 'profile' %}" method="post" class="d-inline">
                 {% csrf_token %}
                 <button type="submit" class="nav-item nav-link btn btn-link">
